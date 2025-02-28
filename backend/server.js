@@ -150,7 +150,7 @@ app.delete('/api/sheets/:id', async (req, res) => {
   }
 });
 
-const frontendPath = path.join(__dirname, '../frontend/dist');
+const frontendPath = path.join(__dirname, '../frontened/dist');
 app.use(express.static(frontendPath));
 
 app.get('*', (req, res) => {
