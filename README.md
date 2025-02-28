@@ -105,12 +105,22 @@ A feature-rich web application that mimics Google Sheets with a focus on mathema
 2. Install dependencies
    ```bash
    # Install server dependencies
+   cd google-sheet
    npm install
+
+   For run at server side
+   cd google-sheet
+   npm start
    
    # Install client dependencies
-   cd client
+   cd google-sheet
+   cd frontened
    npm install
-   cd ..
+
+   For run at client side
+   cd google-sheet
+   cd frontened
+   npm run dev
    ```
 
 3. Configure environment variables
