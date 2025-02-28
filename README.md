@@ -5,8 +5,6 @@ A feature-rich web application that mimics Google Sheets with a focus on mathema
 **Live Demo**: [https://google-sheet-8.onrender.com](https://google-sheet-8.onrender.com)  
 **Repository**: [https://github.com/ujjwalkumar72353/google-sheet](https://github.com/ujjwalkumar72353/google-sheet)
 
-![Google Sheet Clone Screenshot](https://via.placeholder.com/800x400)
-
 ## 📋 Features Implementation Status
 
 ### Core Spreadsheet Interface
