@@ -14,7 +14,6 @@ A feature-rich web application that mimics Google Sheets with a focus on mathema
 - [x] Row and column operations (add, delete, resize)
 - [x] Drag functionality for cell content and selections
 - [x] Cell dependencies management
-- [ ] Cell reference visualization
 
 ### Mathematical Functions
 - [x] SUM: Calculate the sum of a range of cells
@@ -22,7 +21,6 @@ A feature-rich web application that mimics Google Sheets with a focus on mathema
 - [x] MAX: Find the maximum value in a range
 - [x] MIN: Find the minimum value in a range
 - [x] COUNT: Count numerical values in a range
-- [ ] Advanced mathematical functions
 
 ### Data Quality Functions
 - [x] TRIM: Remove leading and trailing whitespace
@@ -30,20 +28,15 @@ A feature-rich web application that mimics Google Sheets with a focus on mathema
 - [x] LOWER: Convert text to lowercase
 - [x] REMOVE_DUPLICATES: Remove duplicate rows from a range
 - [x] FIND_AND_REPLACE: Find and replace text within a selected range
-- [ ] Advanced text processing functions
 
 ### Data Entry and Validation
 - [x] Support for multiple data types (numbers, text, dates)
 - [x] Basic data validation
-- [ ] Custom validation rules
-- [ ] Input masks and patterns
 
 ### Bonus Features in Progress
-- [ ] Cell referencing (relative and absolute)
-- [ ] Save/load spreadsheet functionality
-- [ ] Data visualization (charts, graphs)
-- [ ] Collaborative editing
-- [ ] Version history
+- [x] Cell referencing (relative and absolute)
+- [x] Save/load spreadsheet functionality
+- [x] Data visualization (charts, graphs)
 
 ## 🛠️ Technical Architecture
 
@@ -79,7 +72,6 @@ A feature-rich web application that mimics Google Sheets with a focus on mathema
 #### Frontend
 - **React.js**: Used for its component-based architecture, virtual DOM for efficient updates, and robust ecosystem. Perfect for a cell-grid system that requires frequent re-rendering.
 - **Redux**: State management to maintain spreadsheet data and cell dependencies across the application.
-- **Material UI**: Component library that provides a clean, modern look while maintaining visual similarity to Google Sheets.
 - **CSS Grid/Flexbox**: Used for precise layout of the spreadsheet grid and responsive design.
 - **MathJS**: Library for evaluating mathematical expressions in formulas.
 
@@ -210,17 +202,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👏 Acknowledgments
-
-- Inspired by Google Sheets
-- Built as an assignment project
-- Special thanks to all contributors
-
----
 
 Created by [Ujjwal Kumar](https://github.com/ujjwalkumar72353)
