@@ -1,0 +1,570 @@
+/* SpreadsheetApp.css - Responsive design for Mac and Windows laptops */
+
+/* Base styles */
+.spreadsheet-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  overflow: hidden;
+}
+
+/* Toolbar styles */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  gap: 8px;
+}
+
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.toolbar button:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar button.active {
+  background-color: #e6f2ff;
+  border-color: #99ccff;
+}
+
+.toolbar button svg {
+  margin-right: 4px;
+}
+
+.separator {
+  color: #ccc;
+  margin: 0 4px;
+}
+
+.sheet-title {
+  flex: 1;
+  min-width: 150px;
+  margin-right: 12px;
+}
+
+.sheet-name-input {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.load-select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 120px;
+  height: 32px;
+}
+
+.math-functions, .data-quality-functions, .chart-functions, .validation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.font-size-selector, .font-color-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.font-size-selector select, .font-color-selector input {
+  margin: 0 4px;
+  height: 28px;
+}
+
+/* Formula bar styles */
+.formula-bar {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.cell-address {
+  width: 60px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #e9e9e9;
+  padding: 6px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.formula-prefix {
+  margin-right: 4px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.formula-input {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.apply-formula {
+  padding: 6px 12px;
+  margin-left: 8px;
+  background-color: #4a86e8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.apply-formula:hover {
+  background-color: #3a76d8;
+}
+
+/* Grid styles */
+.spreadsheet-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  position: relative;
+  background-color: #fff;
+}
+
+.column-headers {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.corner-cell {
+  min-width: 40px;
+  height: 24px;
+  background-color: #e9e9e9;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-left: none;
+  z-index: 15;
+  position: sticky;
+  left: 0;
+}
+
+.column-header {
+  min-width: 100px;
+  height: 24px;
+  background-color: #e9e9e9;
+  border: 1px solid #ddd;
+  border-left: none;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.column-resize-handle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 10;
+  background-color: transparent; /* Make it invisible by default */
+}
+
+.column-resize-handle:hover {
+  background-color: #99ccff; /* Show a visual indicator on hover */
+}
+.grid-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-row {
+  display: flex;
+  height: var(--row-height, 24px); /* Default height */
+}
+
+
+.grid-cell {
+  min-width: 100px;
+  height: 100%; /* Inherit height from parent row */
+  border: 1px solid #ddd;
+  border-top: none;
+  border-left: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.row-header {
+  min-width: 40px;
+  height: 100%; /* Inherit height from parent row */
+  background-color: #e9e9e9;
+  border: 1px solid #ddd;
+  border-top: none;
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  position: relative;
+}
+
+.row-resize-handle {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  cursor: row-resize;
+  z-index: 10;
+}
+
+.row-resize-handle:hover {
+  background-color: #99ccff;
+}
+
+
+.grid-cell.selected {
+  background-color: rgba(51, 153, 255, 0.1);
+}
+
+.grid-cell.active {
+  outline: 2px solid #3399ff;
+  z-index: 2;
+}
+
+.cell-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 2px 4px;
+  font-size: 14px;
+  background: transparent;
+}
+
+.fill-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #3399ff;
+  bottom: -4px;
+  right: -4px;
+  cursor: crosshair;
+  z-index: 15;
+}
+
+/* Find & Replace modal */
+.find-replace-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  width: 400px;
+  max-width: 90vw;
+  z-index: 1000;
+}
+
+.find-replace-modal h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.find-replace-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.find-replace-inputs label {
+  display: inline-block;
+  width: 60px;
+  font-weight: bold;
+}
+
+.find-replace-inputs input {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: calc(100% - 70px);
+}
+
+.find-replace-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Chart modal */
+.chart-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF; /* Pure white background */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  padding: 16px;
+  width: 600px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  z-index: 1000;
+  border: 1px solid #e0e0e0; /* Light grey border for visibility */
+}
+
+.chart-modal h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0; /* Lighter separator */
+  padding-bottom: 8px;
+  color: #333; /* Darker text for contrast */
+}
+
+.chart-type-selector {
+  margin-bottom: 16px;
+}
+
+.chart-type-selector select {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border: 1px solid #ccc; /* Soft border */
+  border-radius: 4px;
+  background-color: #fff; /* Ensures dropdown is also white */
+}
+
+
+
+
+.chart-container {
+  background-color: #FFFFFF;
+  height: 300px;
+  margin-bottom: 16px;
+}
+
+.chart-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments for laptops */
+@media screen and (max-width: 1366px) {
+  .toolbar {
+    padding: 6px 8px;
+  }
+  
+  .toolbar button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .separator {
+    margin: 0 2px;
+  }
+  
+  .math-functions, .data-quality-functions {
+    gap: 2px;
+  }
+  
+  .formula-bar {
+    padding: 6px 8px;
+  }
+  
+  .cell-address {
+    width: 50px;
+    padding: 4px;
+  }
+  
+  .formula-input {
+    padding: 4px 8px;
+  }
+  
+  .column-header, .grid-cell {
+    min-width: 80px;
+  }
+}
+
+/* Adjustments for smaller laptops */
+@media screen and (max-width: 1024px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .sheet-title {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .toolbar-actions {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  
+  .math-functions, .data-quality-functions, .chart-functions, .validation-actions {
+    flex-wrap: nowrap;
+  }
+  
+  .column-header, .grid-cell {
+    min-width: 70px;
+  }
+  
+  .chart-modal {
+    width: 90vw;
+  }
+}
+
+/* Hover and focus states for better interaction */
+input:focus, select:focus, button:focus {
+  outline: 2px solid #3399ff;
+  outline-offset: -1px;
+}
+
+.cell-input:focus {
+  outline: none;
+}
+
+/* Browser scroll customization for consistency */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Fix for modal overlays */
+.find-replace-modal::before, .chart-modal::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* Focus trapping for modals (for better keyboard accessibility) */
+.find-replace-modal:focus, .chart-modal:focus {
+  outline: none;
+}
+
+/* Additional Mac-specific adjustments */
+@supports (-webkit-backdrop-filter: none) {
+  .toolbar, .formula-bar {
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(245, 245, 245, 0.8);
+  }
+  
+  .column-headers, .row-header, .corner-cell {
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(233, 233, 233, 0.8);
+  }
+  
+  /* Adjustments for macOS scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Windows-specific High DPI adjustments */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .toolbar button {
+    padding: 5px 9px;
+  }
+  
+  .grid-cell, .column-header, .row-header {
+    box-sizing: border-box;
+  }
+  
+  /* Ensure proper scrolling in IE/Edge */
+  .spreadsheet-grid {
+    -ms-overflow-style: auto;
+  }
+}
+
+/* Ensure proper tooltip display on all browsers */
+button[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 100;
+  pointer-events: none;
+}
